@@ -3,51 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register Page</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <title>New Campaign</title>
+    <link rel="stylesheet" href="../css/dashboard_charity.css">
 </head>
 <body>
-    <div class="login-container">
-        <h1>Register</h1>
-        <form id="registerForm">
-            <div class="input-group">
-                <label for="fullname">Full Name</label>
-                <input type="text" id="fullname" name="fullname" required>
+    <header class="header">
+        <h1 class="page-name">Create New Campaign</h1>
+    </header>
+
+    <div class="container">
+        <form id="campaignForm" class="form">
+            <div class="form-group">
+                <label for="name">Campaign Name:</label>
+                <input type="text" id="name" name="name" required>
             </div>
-            <div class="input-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
             </div>
-            <div class="input-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+            <div class="form-group">
+                <label for="goal_amount">Goal Amount:</label>
+                <input type="number" id="goal_amount" name="goal_amount" required>
             </div>
-            <div class="input-group">
-                <label for="phone">Phone</label>
-                <input type="text" id="phone" name="phone" required>
-            </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div class="input-group">
-                <label for="role">Role</label>
-                <select id="role" name="role_id" required>
-                    <option value="" disabled selected>Choose your role</option>
-                    <option value="1">Admin</option>
-                    <option value="2">Donor</option>
-                    <option value="3">Charity</option>
-                </select>
-            </div>
-            <div class="input-group" id="admin-code-group" style="display:none;">
-                <label for="adminCode">Admin Registration Code</label>
-                <input type="text" id="adminCode" name="adminCode">
-            </div>
-            <button type="submit">Register</button>
+            <button type="submit" class="submit-btn">Create Campaign</button>
         </form>
-        <br>
-        <div id="message"></div>
     </div>
-    <script src="../js/register.js"></script>
+
+    <script src="../js/new_campaign.js"></script>
 </body>
 </html>

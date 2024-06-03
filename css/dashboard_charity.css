@@ -1,6 +1,7 @@
+/* General styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f0f8ff;
     margin: 0;
     padding: 0;
 }
@@ -10,61 +11,179 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #ffffff;
+    background-color: #007bff;
+    color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .page-name {
     margin: 0;
+    font-size: 1.5em;
 }
 
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.charity-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+/* Container styles */
 .container {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styles */
+.form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
-.middle-boxes {
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.submit-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Campaign box styles */
+.campaigns-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
-.box {
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.campaign-box {
+    background-color: #ffffff;
     border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
-.sidebar {
+.campaign-box:hover {
+    transform: scale(1.05);
+}
+
+.campaign-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.campaign-description {
+    font-size: 0.9em;
+    margin: 0 10px 10px;
+    color: #666;
+}
+
+.campaign-goal {
+    font-size: 0.9em;
+    margin: 0 10px 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+.delete-btn {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 10px;
+    right: 10px;
+    background-color: #dc3545;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* Sidebar styles */
+.sidebar {
+    position: relative;
 }
 
 #sidebar-toggle {
-    padding: 10px;
-    background-color: #007bff;
+    padding: 10px 15px;
+    background-color: #89b5e3;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     color: white;
     cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#sidebar-toggle .hamburger-icon {
+    font-size: 1.5em;
 }
 
 #sidebar-toggle:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+    background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 #sidebar-menu {
     list-style-type: none;
     padding: 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 15px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1000;
 }
 
 #sidebar-menu.hidden {
@@ -77,10 +196,34 @@ body {
 
 #sidebar-menu a {
     text-decoration: none;
-    color: #333;
+    color: #007bff;
     transition: color 0.3s ease;
 }
 
 #sidebar-menu a:hover {
-    color: #007bff;
+    color: #0056b3;
+}
+
+.delete-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #ff1a1a;
+}
+
+/* Colorful Campaign Boxes */
+.campaign-box:nth-child(odd) {
+    background-color: #ffe8e8; /* Light red */
+}
+
+.campaign-box:nth-child(even) {
+    background-color: #e8f5ff; /* Light blue */
 }

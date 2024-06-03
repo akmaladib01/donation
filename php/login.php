@@ -41,6 +41,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     'password' => $userData['password'],
                     'role_id' => $userData['role_id']
                 ];
+                //
+                //
             } else {
                 // Check if the email and password exist in the 'user' table
                 $stmt = $db->prepare("SELECT * FROM user WHERE email=:email AND password=:password");
