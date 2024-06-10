@@ -3,33 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donor Dashboard</title>
+    <title>Donation Page</title>
     <link rel="stylesheet" href="../css/dashboard_donor.css">
 </head>
 <body>
     <header class="header">
-        <h1 class="page-name">Donate Now</h1>
-        <div class="sidebar">
-            <button id="sidebar-toggle" aria-label="Toggle Menu" title="Toggle Menu">
-                <span class="hamburger-icon">&#9776;</span>
-            </button>
-            <ul id="sidebar-menu" class="hidden">
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Donation History</a></li>
-                <!-- Add more menu items as needed -->
-            </ul>
+        <div class="logo">
+            <span>Donate Now</span>
+        </div>
+        <nav class="nav">
+            <a href="#" class="nav-link"><i class="fas fa-project-diagram"></i> Project</a>
+            <a href="#" class="nav-link"><i class="fas fa-question-circle"></i> How it works</a>
+            <a href="#" class="nav-link"><i class="fas fa-info-circle"></i> About us</a>
+            <a href="#" class="nav-link"><i class="fas fa-faq"></i> FAQs</a>
+        </nav>
+        <div class="search-get-started">
+            <input type="text" placeholder="Search">
+            <button class="get-started">Get started</button>
         </div>
     </header>
 
-    <div class="container">
-        <div class="middle-boxes">
-            <div class="box">Box 1</div>
-            <div class="box">Box 2</div>
-            <div class="box">Box 3</div>
-            <div class="box">Box 4</div>
-        </div>
-    </div>
-
+    <main class="main-content">
+        <section class="project-list">
+            <!-- Projects will be dynamically loaded here -->
+        </section>
+        <section class="hero">
+            <div class="hero-background">
+                <img src="../images/logo.jpg" alt="Background image">
+            </div>
+            <div class="hero-content">
+                <h1>Make changes and help the world</h1>
+                <p>Hope for Tomorrow non-profit organisation that collaborates with volunteers to deliver humanitarian aid and disaster relief to vulnerable communities.</p>
+                <div class="hero-buttons">
+                    <button class="donate-now">Donate now!</button>
+                    <button class="learn-more">Learn more</button>
+                </div>
+            </div>
+        </section>
+    </main>
     <script src="../js/dashboard_donor.js"></script>
 </body>
 </html>

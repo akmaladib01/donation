@@ -1,0 +1,143 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 800px;
+    background: #fff;
+    margin: 30px auto;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  header img {
+    max-height: 50px;
+  }
+  
+  header a {
+    color: #5a5a89;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .progress-indicator {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  
+  .progress-indicator li {
+    width: 30%;
+    position: relative;
+  }
+  
+  .progress-indicator li::after {
+    content: '';
+    height: 2px;
+    width: 100%;
+    background-color: #dcdce6;
+    position: absolute;
+    top: 50%;
+    left: -50%;
+    z-index: -1;
+  }
+  
+  .progress-indicator li:first-child::after {
+    display: none;
+  }
+  
+  .progress-indicator li.completed {
+    color: #5a5a89;
+  }
+  
+  .progress-indicator li.current {
+    color: #5a5a89;
+    font-weight: bold;
+  }
+  
+  .progress-indicator li.completed::before,
+  .progress-indicator li.current::before {
+    content: '';
+    display: block;
+    height: 20px;
+    width: 20px;
+    background-color: #5a5a89;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+  }
+  
+  .main h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #5a5a89;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="file"],
+  button {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #dcdce6;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"]:focus,
+  input[type="file"]:focus,
+  button:focus {
+    outline: none;
+    border-color: #5a5a89;
+    box-shadow: 0 0 3px #a8a8d1;
+  }
+  
+  button {
+    background-color: #5a5a89;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #47476b;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .form-actions button:first-child {
+    background: none;
+    color: #5a5a89;
+    margin-right: 10px;
+  }
+  
+  .form-actions button:first-child:hover {
+    background-color: #f4f4f9;
+  }

@@ -1,10 +1,10 @@
 <?php
 $hostname = "localhost";
-$database = "student_b032110204";
+$dbname = "student_b032110204";
 $username = "root";
 $password = "";
 
-$db = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
+$db = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
 
 // initial response code
 // response code will be changed if the request goes into any of the processes
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     'address' => $userData['address'],
                     'email' => $userData['email'],
                     'password' => $userData['password'],
-                    'role_id' => $userData['role_id']
+                    'role_id' => (string) $userData['role_id']
                 ];
                 //
                 //
@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         'phone' => $userData['phone'],
                         'email' => $userData['email'],
                         'password' => $userData['password'],
-                        'role_id' => $userData['role_id']
+                        'role_id' => (string) $userData['role_id']
                     ];
                 } else {
                     http_response_code(401);  // Unauthorized

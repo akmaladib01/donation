@@ -27,13 +27,13 @@ document.getElementById('loginForm').addEventListener('submit', async function (
 
             // Redirect user based on role_id
             switch (result.role_id) {
-                case 1:
+                case "1":
                     window.location.href = "dashboard_admin.html";
                     break;
-                case 2:
+                case "2":
                     window.location.href = "dashboard_donor.html";
                     break;
-                case 3:
+                case "3":
                     window.location.href = "dashboard_charity.html";
                     break;
                 default:
@@ -50,9 +50,4 @@ document.getElementById('loginForm').addEventListener('submit', async function (
         console.error('Error:', error);
         document.getElementById('message').innerText = 'An error occurred while logging in.';
     }
-});
-
-// Event listener for the register button
-document.getElementById('registerButton').addEventListener('click', function() {
-    window.location.href = 'register.html';
 });

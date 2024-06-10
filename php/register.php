@@ -1,10 +1,10 @@
 <?php
 $hostname = "localhost";
-$database = "student_b032110204";
+$dbname = "student_b032110204";
 $username = "root";
 $password = "";
 
-$db = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
+$db = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
 
 http_response_code(404);
 $response = new stdClass();

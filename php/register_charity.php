@@ -1,10 +1,10 @@
 <?php
 $hostname = "localhost";
-$database = "student_b032110204";
-$description = "root";
+$dbname = "student_b032110204";
+$username = "root";
 $password = "";
 
-$db = new PDO("mysql:host=$hostname;dbname=$database", $description, $password);
+$db = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
 
 http_response_code(404);
 $response = new stdClass();
@@ -13,9 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         $requestData = json_decode(file_get_contents("php://input"), true);
 
-        if (isset($requestData['name']) && isset($requestData['description']) && isset($requestData['email']) && isset($requestData['phone_company']) && isset($requestData['address']) && isset($requestData['password']) && isset($requestData['role_id'])) {
+        if (isset($requestData['name']) && isset($requestData['username$username']) && isset($requestData['email']) && isset($requestData['phone_company']) && isset($requestData['address']) && isset($requestData['password']) && isset($requestData['role_id'])) {
             $name = $requestData['name'];
-            $description = $requestData['description'];
+            $username = $requestData['username$username'];
             $phone_company = $requestData['phone_company'];
             $address = $requestData['address'];
             $email = $requestData['email'];
@@ -30,9 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 http_response_code(409);  // Conflict
                 $response->error = "Email already exists.";
             } else {
-                $stmt = $db->prepare("INSERT INTO charity (name, description, email, phone_company, address, password, role_id) VALUES (:name, :description, :email, :phone_company, :address, :password, :role_id)");
+                $stmt = $db->prepare("INSERT INTO charity (name, username$username, email, phone_company, address, password, role_id) VALUES (:name, :username$username, :email, :phone_company, :address, :password, :role_id)");
                 $stmt->bindParam(':name', $name);
-                $stmt->bindParam(':description', $description);
+                $stmt->bindParam(':username$username', $username);
                 $stmt->bindParam(':email', $email);
                 $stmt->bindParam(':phone_company', $phone_company);
                 $stmt->bindParam(':address', $address);

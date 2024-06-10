@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Example</title>
+<link rel="stylesheet" href="../css/receipt_detail.css">
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <img src="logo.png" alt="Hope for Tomorrow Logo">
+    <a href="tel:+12045419863">Need to talk? (204) 541-9863</a>
+  </header>
+  
+  <nav>
+    <ul class="progress-indicator">
+      <li class="completed">Donation amount</li>
+      <li class="completed">Payment details</li>
+      <li class="current">Receipt Details</li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Receipt details</h1>
+    
+    <form>
+      <div class="form-group">
+        <label for="first-name">First Name</label>
+        <input type="text" id="first-name" placeholder="Your first name">
+      </div>
+      
+      <div class="form-group">
+        <label for="last-name">Last Name</label>
+        <input type="text" id="last-name" placeholder="Your last name">
+      </div>
+      
+      <!-- Add other input fields here -->
+      
+      <div class="form-group">
+        <label for="file-upload">Receipt of Payment</label>
+        <input type="file" id="file-upload">
+      </div>
+      
+      <div class="form-actions">
+        <button type="button">Back</button>
+        <button type="submit">Next step</button>
+      </div>
+    </form>
+  </main>
+</div>
+
+</body>
+</html>
