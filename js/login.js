@@ -9,8 +9,6 @@ document.getElementById('loginForm').addEventListener('submit', async function (
         password: password
     };
 
-    console.log("XCVB : ", loginData);
-
     try {
         const response = await fetch('../php/login.php', {
             method: 'POST',
@@ -40,9 +38,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
                     console.error("Unknown role_id:", result.role_id);
             }
 
-            console.log(sessionStorage.getItem('userData'));
             document.getElementById('message').innerText = 'Login successful!';
-            console.log(result);
         } else {
             document.getElementById('message').innerText = result.error || 'Login failed!';
         }

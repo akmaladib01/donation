@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     const userData = JSON.parse(sessionStorage.getItem('userData'));
+    console.log('userData:', userData); // Add this line to check the state of userData
 
-    if (userData && userData.role_id === 3) {
+    if (userData && userData.role_id === "3") {
         document.getElementById('charityName').innerText = `Welcome, ${userData.name}`;
 
-        fetch('../php/get_campaign.php?charity_id=' + userData.charity_id)
+        fetch(`../php/get_campaign.php?charity_id=${userData.charity_id}`)
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
@@ -52,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     } else {
         window.location.href = 'login.html';
-    };
+    }
 
     document.getElementById('sidebar-toggle').addEventListener('click', function() {
         var sidebarMenu = document.getElementById('sidebar-menu');

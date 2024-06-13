@@ -41,8 +41,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     'password' => $userData['password'],
                     'role_id' => (string) $userData['role_id']
                 ];
-                //
-                //
             } else {
                 // Check if the email and password exist in the 'user' table
                 $stmt = $db->prepare("SELECT * FROM user WHERE email=:email AND password=:password");
@@ -76,14 +74,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         http_response_code(500);
         $response->error = "Error occurred " . $ee->getMessage();
     }
-} else if ($_SERVER["REQUEST_METHOD"] == "GET") {
-
-    // Handle GET requests
-
-} else if ($_SERVER["REQUEST_METHOD"] == "PUT") {
-
-    // Handle PUT requests
-
 }
 
 // Before sending the JSON response, set the content type header
