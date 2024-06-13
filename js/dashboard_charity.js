@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             event.stopPropagation();
                             deleteCampaign(campaign.campaign_id);
                         });
-                        
+
                         campaignBox.appendChild(title);
                         campaignBox.appendChild(description);
                         campaignBox.appendChild(goal);
