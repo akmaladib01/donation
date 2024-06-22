@@ -35,12 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                             const collected = document.createElement('div');
                             collected.className = 'campaign-collected';
-
-                            if (campaign.raised_amount !== null) {
-                                collected.innerText = `Amount Collected: RM ${campaign.raised_amount.toLocaleString()}`;
-                            } else {
-                                collected.innerText = `Amount Collected: Not available`;
-                            }
+                            collected.innerText = `Amount Collected: RM ${campaign.raised_amount.toLocaleString()}`;
 
                             const deleteButton = document.createElement('button');
                             deleteButton.className = 'delete-btn';
