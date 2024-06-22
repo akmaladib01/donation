@@ -1,18 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('campaignForm');
+    
+    const userData = JSON.parse(sessionStorage.getItem('userData'));
+    console.log('userData at form submission:', userData); // Debugging line
 
     form.addEventListener('submit', function(event) {
         event.preventDefault();
 
-        const userData = JSON.parse(sessionStorage.getItem('userData'));
-
-        if (userData && userData.role_id === 3) {
+        if (userData && userData.role_id === "3") {
             const formData = {
                 name: document.getElementById('name').value,
                 description: document.getElementById('description').value,
                 goal_amount: document.getElementById('goal_amount').value,
-                charity_id: userData.charity_id // Assuming the userData object contains the charity_id
+                charity_id: userData.charity_id // Ensuring the charity_id is from logged-in user data
             };
+
+            console.log('formData being submitted:', formData); // Debugging line
 
             fetch('../php/new_campaign.php', {
                 method: 'POST',
@@ -34,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error('Error:', error);
             });
         } else {
-            window.location.href = 'login.html';
+            console.log('User data not found or role_id is not 3, redirecting to login.'); // 3-second delay
         }
     });
 });

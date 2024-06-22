@@ -130,6 +130,13 @@ textarea {
     font-weight: bold;
 }
 
+.campaign-collected {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
 .delete-btn {
     position: absolute;
     top: 10px;
@@ -228,3 +235,16 @@ textarea {
 .campaign-box:nth-child(even) {
     background-color: #e8f5ff; /* Light blue */
 }
+
+.campaign-box {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.campaign-box.enlarged {
+    transform: scale(1.1);
+    background-color: #f0f8ff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+ 
